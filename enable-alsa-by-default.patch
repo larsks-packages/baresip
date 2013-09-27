@@ -1,0 +1,15 @@
+diff --git a/src/config.c b/src/config.c
+index 7d9c576..7aefd77 100644
+--- a/src/config.c
++++ b/src/config.c
+@@ -547,8 +547,8 @@ int config_write_template(const char *file, const struct config *cfg)
+ #elif defined (DARWIN)
+ 	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "coreaudio" MOD_EXT "\n");
+ #else
+-	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "oss" MOD_EXT "\n");
+-	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "alsa" MOD_EXT "\n");
++	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "oss" MOD_EXT "\n");
++	(void)re_fprintf(f, "module\t\t\t" MOD_PRE "alsa" MOD_EXT "\n");
+ #endif
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "portaudio" MOD_EXT "\n");
+ 	(void)re_fprintf(f, "#module\t\t\t" MOD_PRE "gst" MOD_EXT "\n");
