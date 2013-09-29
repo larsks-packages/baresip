@@ -1,4 +1,4 @@
-This `README` was generated automatically using rpm-build-readme at Sat Sep 28 22:06:51 EDT 2013.
+This `README` was generated automatically using `rpm-build-readme` at Sat Sep 28 22:15:46 EDT 2013.
 
 Packages built by this spec file
 ================================
@@ -19,3 +19,16 @@ Sources used by this spec file
 
 - Source0: http://www.creytiv.com/pub/baresip-0.4.5.tar.gz
 - Patch100: enable-alsa-by-default.patch
+
+Requirements for building this package
+======================================
+
+- re-devel
+- rem-devel
+- alsa-lib-devel
+- libXau-devel
+- libXext-devel
+- libX11-devel
+- libxcb-devel
+- openssl-devel
+- pcre-devel
