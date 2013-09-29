@@ -1,0 +1,30 @@
+diff --git a/Makefile b/Makefile
+index 7b58306..797f8ca 100644
+--- a/Makefile
++++ b/Makefile
+@@ -85,7 +85,7 @@ MOD_BLD	:= $(patsubst %,$(BUILD)/modules/%,$(MODULES))
+ LIBDIR     := $(PREFIX)/lib
+ MOD_PATH   := $(LIBDIR)/$(PROJECT)/modules
+ SHARE_PATH := $(PREFIX)/share/$(PROJECT)
+-CFLAGS     += -DPREFIX=\"$(PREFIX)\"
++CFLAGS     += -DPREFIX=\"$(PREFIX)\" -DMOD_PATH=\"$(MOD_PATH)\"
+ 
+ 
+ all: sanity $(MOD_BINS) $(BIN)
+diff --git a/src/config.c b/src/config.c
+index 7d9c576..f3a962f 100644
+--- a/src/config.c
++++ b/src/config.c
+@@ -445,7 +445,11 @@ static uint32_t count_modules(const char *path)
+ static const char *detect_module_path(bool *valid)
+ {
+ 	static const char * const pathv[] = {
+-#if defined (PREFIX)
++#if defined (MOD_PATH)
++		MOD_PATH
++#elif defined (LIBDIR)
++		"" LIBDIR "/baresip/modules",
++#elif defined (PREFIX)
+ 		"" PREFIX "/lib/baresip/modules",
+ #else
+ 		"/usr/local/lib/baresip/modules",
