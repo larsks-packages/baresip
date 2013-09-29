@@ -1,6 +1,6 @@
 Name:           baresip
 Version:        0.4.5
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        A simple SIP user agent
 
 License:        BSD
@@ -9,8 +9,8 @@ Source0:        http://www.creytiv.com/pub/%{name}-%{version}.tar.gz
 Patch100:       baresip-0.4.5-enable-alsa-by-default.patch
 Patch101:	baresip-0.4.5-modules-in-libdir.patch
 
-BuildRequires:  re-devel
-BuildRequires:  rem-devel
+BuildRequires:  libre-devel
+BuildRequires:  librem-devel
 BuildRequires:  alsa-lib-devel
 BuildRequires:  libXau-devel
 BuildRequires:  libXext-devel
