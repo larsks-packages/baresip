@@ -1,5 +1,5 @@
 Name:           baresip
-Version:        0.4.5
+Version:        0.4.7
 Release:        5%{?dist}
 Summary:        A simple SIP user agent
 
@@ -7,7 +7,7 @@ License:        BSD
 URL:            http://www.creytiv.com/baresip.html
 Source0:        http://www.creytiv.com/pub/%{name}-%{version}.tar.gz
 Patch100:       baresip-0.4.5-enable-alsa-by-default.patch
-Patch101:	baresip-0.4.5-modules-in-libdir.patch
+Patch101:	baresip-0.4.7-modules-in-libdir.patch
 
 BuildRequires:  libre-devel
 BuildRequires:  librem-devel
@@ -26,7 +26,7 @@ Baresip is a portable and modular SIP User-Agent with audio and video support.
 %setup -q
 
 # Use ALSA audio driver by default.
-%patch100 -p1 -b.alsa
+#%patch100 -p1 -b.alsa
 %patch101 -p1 -b.libdir
 
 %build
@@ -41,30 +41,31 @@ rm -rf $RPM_BUILD_ROOT
 %files
 %doc docs/*
 %{_bindir}/baresip
-%{_libdir}/baresip/modules/x11.so
-%{_libdir}/baresip/modules/ice.so
-%{_libdir}/baresip/modules/selfview.so
-%{_libdir}/baresip/modules/vumeter.so
-%{_libdir}/baresip/modules/mwi.so
-%{_libdir}/baresip/modules/l16.so
-%{_libdir}/baresip/modules/x11grab.so
-%{_libdir}/baresip/modules/presence.so
-%{_libdir}/baresip/modules/syslog.so
-%{_libdir}/baresip/modules/natbd.so
-%{_libdir}/baresip/modules/vidloop.so
-%{_libdir}/baresip/modules/turn.so
-%{_libdir}/baresip/modules/menu.so
-%{_libdir}/baresip/modules/g711.so
-%{_libdir}/baresip/modules/cons.so
 %{_libdir}/baresip/modules/account.so
-%{_libdir}/baresip/modules/evdev.so
-%{_libdir}/baresip/modules/contact.so
 %{_libdir}/baresip/modules/alsa.so
 %{_libdir}/baresip/modules/auloop.so
+%{_libdir}/baresip/modules/cons.so
+%{_libdir}/baresip/modules/contact.so
+%{_libdir}/baresip/modules/evdev.so
+%{_libdir}/baresip/modules/g711.so
+%{_libdir}/baresip/modules/httpd.so
+%{_libdir}/baresip/modules/ice.so
+%{_libdir}/baresip/modules/l16.so
+%{_libdir}/baresip/modules/menu.so
+%{_libdir}/baresip/modules/mwi.so
+%{_libdir}/baresip/modules/natbd.so
 %{_libdir}/baresip/modules/natpmp.so
-%{_libdir}/baresip/modules/stdio.so
 %{_libdir}/baresip/modules/oss.so
+%{_libdir}/baresip/modules/presence.so
+%{_libdir}/baresip/modules/selfview.so
+%{_libdir}/baresip/modules/stdio.so
 %{_libdir}/baresip/modules/stun.so
+%{_libdir}/baresip/modules/syslog.so
+%{_libdir}/baresip/modules/turn.so
+%{_libdir}/baresip/modules/vidloop.so
+%{_libdir}/baresip/modules/vumeter.so
+%{_libdir}/baresip/modules/x11grab.so
+%{_libdir}/baresip/modules/x11.so
 %{_datadir}/baresip
 
 %changelog

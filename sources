@@ -1,3 +1,3 @@
-91733b9d110f533eb43ce67f9cccef78  baresip-0.4.5.tar.gz
+2583e1170b6656ab4dacf714954e66a1  baresip-0.4.7.tar.gz
 d6c5aca67993fabd1356acf8f0e9cc72  baresip-0.4.5-enable-alsa-by-default.patch
-bd216e942957f86297c50a18349a50c1  baresip-0.4.5-modules-in-libdir.patch
+d59d96e9a915891e67ad607ba4c4cf5a  baresip-0.4.7-modules-in-libdir.patch
